@@ -3,9 +3,9 @@ matrix-appservice-twitter
 
 Twitter bridge for Matrix.
 
-[![Build Status](https://travis-ci.org/Half-Shot/matrix-appservice-twitter.svg?branch=develop)](https://travis-ci.org/Half-Shot/matrix-appservice-twitter)
+### Using master is discouraged right now. Please use the develop branch until a release is made.
 
-Please [visit this page](https://half-shot.github.io/matrix-appservice-twitter/) for a prettier introduction.
+### Please [visit this page](https://half-shot.github.io/matrix-appservice-twitter/) for a prettier introduction.
 
 See [#twitter:half-shot.uk](https://matrix.to/#/#twitter:half-shot.uk) for dev discussion and help.
 
@@ -69,28 +69,19 @@ The bridge should authenticate and be ready for use.
 
 Linking is not required for reading timelines/hashtags, but **interactions must be completed under your own account**.
 
-* Create a room and invite ``@_twitter_bot:{yourdomain}``.
-* Send the message `account.link (read|write|dm)` where the argument sets the requested permission level\*.
-* Follow the URL and instructions. Copy the PIN code.
+* Create a room and invite ``@twitbot:yourdomain``.
+* Send the message `link account`
+* Follow the URL and instructions. Copy the PIN code
 * Enter the pin code directly into the room and your account should be linked up.
-
-\*type help for explanaitons on commands
 
 ## User Timelines
 
-Simply join ``#_twitter_@screennamegoeshere:yourdomain`` to read a users timeline. Protected timelines are currently not available.
+Simply join ``@twitter_@screennamegoeshere:yourdomain`` to read a users timeline. Protected timelines are currently not available.
 
 Accounts which are bridged (Twitter<->Matrix) will be able to send tweets to these timelines (you do not need to put the @screen_name, it is done automatically)
 
 ## Hashtags
 
-Join ``#_twitter_#hashtaggoeshere`` to follow a particular hashtag.
+Join ``@twitter_#hashtaggoeshere`` to follow a particular hashtag.
 
 Accounts which are bridged (Twitter<->Matrix) will be able to send tweets which will automatically apply this tag.
-
-## Direct Messages
-__Note: Due to limitations in the Twitter API, group DMs are not possible.__
-
-On receiving a DM, you will be invited to a room where you can message each other as if it was another Matrix user.
-
-Rejoining previous conversations is not possible, but either user sending a message will create a private room.
